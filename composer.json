@@ -1,0 +1,43 @@
+{
+    "name": "obelaw/ium-eam",
+    "description": "EAM",
+    "autoload": {
+        "psr-4": {
+            "Obelaw\\Ium\\Eam\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Obelaw\\Ium\\Eam\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karim Mohamed",
+            "email": "komicho1996@gmail.com"
+        }
+    ],
+    "require": {
+        "obelaw/ium": "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.3",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "orchestra/testbench": "^10.9"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Obelaw\\Ium\\Eam\\Providers\\ObelawEAMServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest"
+    }
+}
