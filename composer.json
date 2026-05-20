@@ -1,6 +1,12 @@
 {
     "name": "obelaw/ium-eam",
-    "description": "EAM",
+    "description": "IUM Employee Asset Management",
+    "authors": [
+        {
+            "name": "Karim Mohamed",
+            "email": "komicho1996@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Obelaw\\Ium\\Eam\\": "src/"
@@ -11,24 +17,22 @@
             "Obelaw\\Ium\\Eam\\Tests\\": "tests/"
         }
     },
-    "authors": [
-        {
-            "name": "Karim Mohamed",
-            "email": "komicho1996@gmail.com"
-        }
-    ],
     "require": {
-        "obelaw/ium": "dev-main"
+        "laravel/framework": "^11.0|^12.0",
+        "obelaw/ium": "*"
     },
     "require-dev": {
         "pestphp/pest": "^4.3",
         "pestphp/pest-plugin-laravel": "^4.0",
         "orchestra/testbench": "^10.9"
     },
+    "suggest": {
+        "obelaw/ium-wms": "Sync assets with WMS warehouse inventory"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Obelaw\\Ium\\Eam\\Providers\\ObelawEAMServiceProvider"
+                "Obelaw\\Ium\\Eam\\Providers\\EamServiceProvider"
             ]
         }
     },
