@@ -6,8 +6,8 @@ namespace Obelaw\Ium\Eam\Providers;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
-use Obelaw\Ium\ObelawiumManager;
 use Obelaw\Ium\Eam\EamManager;
+use Obelaw\Ium\Facades\Ium;
 
 class EamServiceProvider extends ServiceProvider
 {
@@ -15,11 +15,7 @@ class EamServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/eam.php', 'eam');
 
-        $this->app->singleton('ium.eam', function ($app) {
-            return new EamManager();
-        });
-
-        ObelawiumManager::macro('eam', fn() => app('ium.eam'));
+        Ium::registerDomain('eam', EamManager::class);
     }
 
     public function boot(): void
